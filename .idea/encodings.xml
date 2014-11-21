@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/src/main/java/com/jsjty/mapper/TdeviceMapper.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/jsjty/model/Tdevice.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/jsjty/model/Tdeviceweight.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/jsjty/model/Tfeedback.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/jsjty/model/TinspectRecords.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/jsjty/model/TinspectStandard.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/jsjty/model/Toperate.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/jsjty/model/Tqrcode.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/jsjty/model/Tqrcode_records.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/jsjty/model/Tqrcodemap.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/jsjty/model/Tregion.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/jsjty/model/TrepairFeedback.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/jsjty/model/TrepairRecords.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/jsjty/model/TrepairTask.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/jsjty/model/Ttask.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/jsjty/model/Ttaskschedule.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/jsjty/model/Tweight.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/jsjty/model/Tweightversion.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/jsjty/model/TweightversionKey.java" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>
