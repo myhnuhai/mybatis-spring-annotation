@@ -10,7 +10,6 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/test-classes/com/jsjty/DeviceTest.class" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/MyBatis/WEB-INF/classes/com/jsjty/util/EncodeUtil.class" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/jsjty/util/EncodeUtil.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/report/Excel.xls" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/MyBatis/WEB-INF/classes/com/jsjty/controller/ExcelController.class" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/jsjty/controller/ExcelController.class" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/MyBatis/WEB-INF/classes/com/jsjty/core/excel/ExcelData.class" />
@@ -86,11 +85,6 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/MyBatis/WEB-INF/classes/spring-mybatis.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/spring-mybatis.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/MyBatis/WEB-INF/web.xml" />
-      <change type="DELETED" beforePath="D:\workspace\android\idea\MyBatis\src\main\webapp\report\Report.xls" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/jsjty/controller/ExcelController.java" afterPath="$PROJECT_DIR$/src/main/java/com/jsjty/controller/ExcelController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/jsjty/core/excel/ExcelData.java" afterPath="$PROJECT_DIR$/src/main/java/com/jsjty/core/excel/ExcelData.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/jsjty/core/excel/ExcelExporter.java" afterPath="$PROJECT_DIR$/src/main/java/com/jsjty/core/excel/ExcelExporter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/jsjty/core/excel/ExcelFiller.java" afterPath="$PROJECT_DIR$/src/main/java/com/jsjty/core/excel/ExcelFiller.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Mybatis.iws" />
@@ -1033,7 +1027,7 @@
       <workItem from="1416814632638" duration="1354000" />
       <workItem from="1416816585524" duration="3296000" />
       <workItem from="1416977988590" duration="4661000" />
-      <workItem from="1417054235219" duration="13785000" />
+      <workItem from="1417054235219" duration="13793000" />
     </task>
     <task id="LOCAL-00001" summary="mybatis-springMVC annotation整合">
       <created>1416538245001</created>
@@ -1083,11 +1077,17 @@
       <option name="project" value="LOCAL" />
       <updated>1417068204331</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Map与JavaBean相互转换">
+      <created>1417069646034</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1417069646034</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54908000" />
+    <option name="totallyTimeSpent" value="54916000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
