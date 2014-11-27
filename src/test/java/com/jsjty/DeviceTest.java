@@ -2,11 +2,12 @@ package com.jsjty;
 
 import com.jsjty.model.Tdevice;
 import com.jsjty.service.IDeviceService;
-import org.apache.log4j.Logger;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -18,7 +19,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration(locations = {"classpath:spring-context.xml","classpath:spring-mybatis.xml"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class DeviceTest {
-    private final static Logger logger = Logger.getLogger(DeviceTest.class);
+    private final static Logger logger = LoggerFactory.getLogger(DeviceTest.class);
     @Autowired
     private IDeviceService deviceService;
 
@@ -39,7 +40,7 @@ public class DeviceTest {
         tdevice.setMaintain(2);
         tdevice.setPicspath("本地");
         int temp = deviceService.insert(tdevice);
-        logger.info(temp);
+        logger.info(String.valueOf(temp));
     }
 
     @Test
@@ -51,6 +52,6 @@ public class DeviceTest {
     @Test
     public void ctestDeleteDevice(){
         int temp = deviceService.deleteByPrimaryKey("5001001");
-        logger.info(temp);
+        logger.info(String.valueOf(temp));
     }
 }
