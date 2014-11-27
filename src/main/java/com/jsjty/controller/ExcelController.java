@@ -28,8 +28,8 @@ public class ExcelController {
                             HttpServletResponse response){
         ExcelExporter excelExporter = new ExcelExporter();
         Map<String,String> params = new HashMap<String,String>();
-        params.put("reportTitle", "北京市第一人民医院收费项目表");
-        params.put("name","江苏省交通规划设计院");
+        params.put("reportTitle", "项目报表导出文档");
+        params.put("name","项目报表导出文档");
         params.put("time","2014-11-22");
         params.put("data","测试数据");
         params.put("project","项目名称");
