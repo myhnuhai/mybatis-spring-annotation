@@ -8,7 +8,7 @@ import java.util.Map;
  */
 public class ExcelData {
 
-    public ExcelData(Map<String, String> parameters, List<String> fieldsList) {
+    public ExcelData(Map<String, Object> parameters, List<String> fieldsList) {
         this.parameters = parameters;
         this.fieldsList = fieldsList;
     }
@@ -16,7 +16,7 @@ public class ExcelData {
     /**
      * Excel参数元数据对象
      */
-    private Map<String,String> parameters;
+    private Map<String,Object> parameters;
 
     /**
      * Excel集合元对象
@@ -24,11 +24,11 @@ public class ExcelData {
     private List<String> fieldsList;
 
 
-    public Map<String, String> getParameters() {
+    public Map<String, Object> getParameters() {
         return parameters;
     }
 
-    public void setParameters(Map<String, String> parameters) {
+    public void setParameters(Map<String, Object> parameters) {
         this.parameters = parameters;
     }
 

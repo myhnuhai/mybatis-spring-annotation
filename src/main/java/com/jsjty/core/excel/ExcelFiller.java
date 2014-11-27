@@ -1,13 +1,10 @@
 package com.jsjty.core.excel;
 
-import com.jsjty.util.StringUtil;
 import org.apache.log4j.Logger;
 import org.apache.poi.hssf.usermodel.HSSFCell;
-import org.apache.poi.hssf.usermodel.HSSFComment;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.poifs.filesystem.POIFSFileSystem;
-import org.apache.poi.ss.usermodel.Workbook;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.ByteArrayOutputStream;
@@ -57,7 +54,7 @@ public class ExcelFiller {
     /**
      * 数据填充 将ExcelData填入excel模板
      *
-     * @return ByteArrayOutputStream
+     * @return HSSFWorkbook
      */
     public HSSFWorkbook fill(HttpServletRequest request) {
         logger.info("-----------------");
@@ -91,18 +88,16 @@ public class ExcelFiller {
 
     private void fillParameters(HSSFSheet hssfSheet) {
         List<HSSFCell> cellList = getExcelTemplate().getParameterObjct();
-        Map<String,String> parameters = getExcelData().getParameters();
+        Map<String,Object> parameters = getExcelData().getParameters();
         for (HSSFCell hssfCell : cellList) {
             HSSFCell cell = hssfSheet.getRow(hssfCell.getRowIndex()).getCell(hssfCell.getColumnIndex());
 
             String cellValue = hssfCell.getStringCellValue();
             String key = getKey(cellValue);
-            String type = getType(cellValue);
-
-            if(type.equalsIgnoreCase(ExcelTPL_DataType_Number)){
-                    cell.setCellValue(parameters.get(key));
+            if(parameters.get(key) != null){
+                cell.setCellValue(parameters.get(key).toString());
             }else{
-                cell.setCellValue(parameters.get(key));
+                cell.setCellValue("");
             }
         }
     }

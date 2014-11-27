@@ -1,14 +1,18 @@
 package com.jsjty.controller;
 
 import com.jsjty.core.excel.ExcelExporter;
+import com.jsjty.model.Tdevice;
+import com.jsjty.service.IDeviceService;
+import com.jsjty.util.BeanUtil;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -18,23 +22,22 @@ import java.util.Map;
 @RequestMapping("/excel")
 public class ExcelController {
 
+    @Autowired
+    private IDeviceService deviceService;
     /**
      * 导出Excel
      * @param request
      * @param response
      */
-    @RequestMapping("/export.jetx")
-    public void excelExport(HttpServletRequest request,
+    @RequestMapping("{ids}.jetx")
+    public void excelExport(@PathVariable String ids,HttpServletRequest request,
                             HttpServletResponse response){
+
+        Tdevice tdevice = deviceService.selectByPrimaryKey(ids);
+        Map<String,Object> params = BeanUtil.bean2Map(tdevice);
+
         ExcelExporter excelExporter = new ExcelExporter();
-        Map<String,String> params = new HashMap<String,String>();
-        params.put("reportTitle", "项目报表导出文档");
-        params.put("name","项目报表导出文档");
-        params.put("time","2014-11-22");
-        params.put("data","测试数据");
-        params.put("project","项目名称");
-        params.put("test","测试");
-        excelExporter.setTemplatePath("/report/Report.xls");
+        excelExporter.setTemplatePath("/report/Excel.xls");
         excelExporter.setData(params, new ArrayList<String>());
         excelExporter.setFilename("项目报表导出文档.xls");
         try {

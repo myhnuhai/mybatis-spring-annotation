@@ -8,7 +8,6 @@ import org.slf4j.LoggerFactory;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
@@ -20,7 +19,7 @@ public class ExcelExporter {
 
     private final static Logger logger = LoggerFactory.getLogger(ExcelExporter.class);
     private String templatePath;
-    private Map<String, String> parameters;
+    private Map<String, Object> parameters;
     private List<String> fieldsList;
     private String filename = "Excel.xls";
 
@@ -31,7 +30,7 @@ public class ExcelExporter {
      * @param parameters 参数集合
      * @param pList      字段集合
      */
-    public void setData(Map<String, String> parameters, List<String> pList) {
+    public void setData(Map<String, Object> parameters, List<String> pList) {
         this.parameters = parameters;
         this.fieldsList = pList;
     }
@@ -67,11 +66,11 @@ public class ExcelExporter {
         this.templatePath = templatePath;
     }
 
-    public Map<String, String> getParameters() {
+    public Map<String, Object> getParameters() {
         return parameters;
     }
 
-    public void setParameters(Map<String, String> parameters) {
+    public void setParameters(Map<String, Object> parameters) {
         this.parameters = parameters;
     }
 
