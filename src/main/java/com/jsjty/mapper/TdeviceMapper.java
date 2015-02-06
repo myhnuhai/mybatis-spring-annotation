@@ -1,21 +1,26 @@
 package com.jsjty.mapper;
 
 import com.jsjty.model.Tdevice;
+import com.jsjty.provider.TdeviceProvider;
 import org.apache.ibatis.annotations.*;
+
+import java.util.List;
 
 public interface TdeviceMapper {
 
-    @Delete("delete from tdevice where deviceid = #{deviceid,jdbcType=VARCHAR}")
-    int deleteByPrimaryKey(@Param("deviceid")String deviceid);
+    @DeleteProvider(type = TdeviceProvider.class,method = "deleteById")
+    int deleteById(@Param("deviceid")String deviceid);
 
-    @Insert("INSERT INTO tdevice(deviceid,parentid,devicename,devicetype,position,devicegrade,remark,importance,maintain,weight,picspath) " +
-            " VALUES(#{deviceid},#{parentid},#{devicename},#{devicetype},#{position},#{devicegrade},#{remark},#{importance},#{maintain},#{weight},#{picspath})")
-    int insert(Tdevice record);
+    @InsertProvider(type = TdeviceProvider.class,method = "insert")
+    int insert(Tdevice tdevice);
 
-    @Select("select * from tdevice  where deviceid = #{deviceid,jdbcType=VARCHAR}")
+    @SelectProvider(type = TdeviceProvider.class,method = "selectById")
     @Options(useCache = true, flushCache = false, timeout = 10000)
-    Tdevice selectByPrimaryKey(@Param("deviceid")String deviceid);
+    Tdevice selectById(@Param("deviceid")String deviceid);
 
-    @Update("update tdevice t set t.picspath = #{picspath} where t.deviceid = #{deviceid,jdbcType=VARCHAR}")
-    int updateByPrimaryKey(Tdevice record);
+     @SelectProvider(type = TdeviceProvider.class,method = "selectAll")
+    List<Tdevice> selectAll();
+
+    @UpdateProvider(type = TdeviceProvider.class,method = "update")
+    int updateByPrimaryKey(Tdevice tdevice);
 }

@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * Created by 马英虎 on 2014/11/19.
  */
@@ -19,11 +21,16 @@ public class DeviceServiceImpl implements IDeviceService {
     @Override
     @Cacheable(key = "#deviceId",value = "selectByPrimaryKeyCache")
     public Tdevice selectByPrimaryKey(String deviceId) {
-        return deviceMapper.selectByPrimaryKey(deviceId);
+        return deviceMapper.selectById(deviceId);
     }
     @Override
     public int deleteByPrimaryKey( String deviceid) {
-        return deviceMapper.deleteByPrimaryKey(deviceid);
+        return deviceMapper.deleteById(deviceid);
+    }
+
+    @Override
+    public List<Tdevice> selectALL() {
+        return deviceMapper.selectAll();
     }
 
     @Override

@@ -12,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.util.List;
+
 /**
  * Created by 马英虎 on 2014/11/19.
  */
@@ -23,35 +25,41 @@ public class DeviceTest {
     @Autowired
     private IDeviceService deviceService;
 
-
+    @Test
+    public void atestInsert(){
+       Tdevice tdevice = new Tdevice();
+        tdevice.setRemark("123");
+        tdevice.setDevicegrade(8);
+        tdevice.setDeviceid("100");
+        tdevice.setDevicename("测试设备");
+        tdevice.setDevicetype("强电");
+        tdevice.setImportance(0);
+        tdevice.setMaintain(2);
+        tdevice.setParentid("");
+        tdevice.setWeight(2.5f);
+        tdevice.setPeriodcount(1);
+        tdevice.setPeriodtype("天");
+        int sum = deviceService.insert(tdevice);
+        System.out.println("提交成功:" + sum);
+    }
 
     @Test
-    public void atestInsertDevice(){
-        Tdevice tdevice = new Tdevice();
-        tdevice.setRemark("");
-        tdevice.setPosition("江苏");
-        tdevice.setParentid("50001");
-        tdevice.setDeviceid("5001001");
-        tdevice.setDevicegrade(0);
-        tdevice.setDevicename("测试设备");
-        tdevice.setDevicetype("弱电");
-        tdevice.setImportance(2);
-        tdevice.setWeight(2.6F);
-        tdevice.setMaintain(2);
-        tdevice.setPicspath("本地");
-        int temp = deviceService.insert(tdevice);
-        logger.info(String.valueOf(temp));
+    public void atestSelectAll(){
+        List<Tdevice> tdeviceList = deviceService.selectALL();
+        for (Tdevice tdevice : tdeviceList) {
+            logger.info(tdevice.toString());
+        }
     }
 
     @Test
     public void btestSelectDevice(){
-        Tdevice tdevice = deviceService.selectByPrimaryKey("5001001");
+        Tdevice tdevice = deviceService.selectByPrimaryKey("100");
         logger.info(tdevice.toString());
     }
 
     @Test
     public void ctestDeleteDevice(){
-        int temp = deviceService.deleteByPrimaryKey("5001001");
+        int temp = deviceService.deleteByPrimaryKey("100");
         logger.info(String.valueOf(temp));
     }
 }
