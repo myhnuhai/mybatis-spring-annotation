@@ -58,7 +58,46 @@ public class TdeviceProvider extends BaseProvider {
 
     @Override
     public String update(Object obj) {
-        return null;
+        if (StringUtil.isEmpty(obj)) {
+            return "";
+        }
+        Tdevice tdevice = (Tdevice) obj;
+        BEGIN();
+        UPDATE(TABLE_NAME);
+        if (StringUtil.isNotEmpty(tdevice.getParentid())) {
+            SET("parentid=#{parentid}");
+        }
+        if (StringUtil.isNotEmpty(tdevice.getDevicename())) {
+            SET("devicename=#{devicename}");
+        }
+        if (StringUtil.isNotEmpty(tdevice.getDevicetype())) {
+            SET("devicetype=#{devicetype}");
+        }
+        if (StringUtil.isNotEmpty(tdevice.getPosition())) {
+            SET("position=#{position}");
+        }
+        if (StringUtil.isNotEmpty(tdevice.getDevicegrade())) {
+            SET("devicegrade=#{devicegrade}");
+        }
+        if (StringUtil.isNotEmpty(tdevice.getImportance())) {
+            SET("importance=#{importance}");
+        }
+        if (StringUtil.isNotEmpty(tdevice.getRemark())) {
+            SET("remark=#{remark}");
+        }
+        if (StringUtil.isNotEmpty(tdevice.getMaintain())) {
+            SET("maintain=#{maintain}");
+        }
+        if (StringUtil.isNotEmpty(tdevice.getWeight())) {
+            SET("weight=#{weight}");
+        }
+        if (StringUtil.isNotEmpty(tdevice.getPicspath())) {
+            SET("picspath=#{picspath}");
+        }
+
+        WHERE("deviceid=#{deviceid}");
+
+        return SQL();
     }
 
     @Override
