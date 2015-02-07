@@ -94,9 +94,13 @@ public class TdeviceProvider extends BaseProvider {
         if (StringUtil.isNotEmpty(tdevice.getPicspath())) {
             SET("picspath=#{picspath}");
         }
-
+        if(StringUtil.isNotEmpty(tdevice.getPeriodcount())){
+            SET("periodcount=#{periodcount}");
+        }
+        if(StringUtil.isNotEmpty(tdevice.getPeriodtype())){
+            SET("periodtype=#{periodtype}");
+        }
         WHERE("deviceid=#{deviceid}");
-
         return SQL();
     }
 

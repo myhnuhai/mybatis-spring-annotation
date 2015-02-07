@@ -19,12 +19,13 @@ public class DeviceServiceImpl implements IDeviceService {
     private TdeviceMapper deviceMapper;
 
     @Override
-    @Cacheable(key = "#deviceId",value = "selectByPrimaryKeyCache")
-    public Tdevice selectByPrimaryKey(String deviceId) {
+
+    public Tdevice selectById(String deviceId) {
         return deviceMapper.selectById(deviceId);
     }
+
     @Override
-    public int deleteByPrimaryKey( String deviceid) {
+    public int deleteById( String deviceid) {
         return deviceMapper.deleteById(deviceid);
     }
 
@@ -39,7 +40,7 @@ public class DeviceServiceImpl implements IDeviceService {
     }
 
     @Override
-    public int updateByPrimaryKey(Tdevice record) {
-        return deviceMapper.updateByPrimaryKey(record);
+    public int update(Tdevice record) {
+        return deviceMapper.update(record);
     }
 }

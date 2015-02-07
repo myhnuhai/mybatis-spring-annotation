@@ -9,13 +9,13 @@ import java.util.List;
  */
 public interface IDeviceService {
 
-    public Tdevice selectByPrimaryKey(String deviceId);
+    public Tdevice selectById(String deviceId);
 
-    int deleteByPrimaryKey( String deviceid);
+    int deleteById( String deviceid);
 
     public List<Tdevice> selectALL();
 
     int insert(Tdevice record);
 
-    int updateByPrimaryKey(Tdevice record);
+    int update(Tdevice record);
 }

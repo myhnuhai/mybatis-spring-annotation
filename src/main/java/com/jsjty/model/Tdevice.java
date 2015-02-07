@@ -1,9 +1,11 @@
 package com.jsjty.model;
 
+import java.io.Serializable;
+
 /**
  * Created by Administrator on 2015/2/6.
  */
-public class Tdevice {
+public class Tdevice implements Serializable{
     private String parentid;
     private String deviceid;
     private String devicename;

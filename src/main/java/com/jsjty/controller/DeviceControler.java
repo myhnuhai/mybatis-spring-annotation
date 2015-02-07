@@ -22,6 +22,6 @@ public class DeviceControler {
     @RequestMapping("{deviceId}")
     @ResponseBody
     public Tdevice getDevice(@PathVariable String deviceId){
-        return deviceService.selectByPrimaryKey(deviceId);
+        return deviceService.selectById(deviceId);
     }
 }

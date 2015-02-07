@@ -33,7 +33,7 @@ public class ExcelController {
     public void excelExport(@PathVariable String ids,HttpServletRequest request,
                             HttpServletResponse response){
 
-        Tdevice tdevice = deviceService.selectByPrimaryKey(ids);
+        Tdevice tdevice = deviceService.selectById(ids);
         Map<String,Object> params = BeanUtil.bean2Map(tdevice);
 
         ExcelExporter excelExporter = new ExcelExporter();

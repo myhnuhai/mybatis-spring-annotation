@@ -24,7 +24,13 @@ public class CacheTest {
 
     @Test
     public void atestInsertDevice(){
-        logger.info(deviceService.selectByPrimaryKey("01101").toString());
-       logger.info(deviceService.selectByPrimaryKey("01101").toString());
+        long cur = System.currentTimeMillis();
+        logger.info("耗时：" + cur);
+        logger.info(deviceService.selectById("01101").toString());
+        logger.info("耗时：" + (System.currentTimeMillis() - cur));
+       logger.info(deviceService.selectById("01101").toString());
+        logger.info("耗时：" + (System.currentTimeMillis() - cur));
+        logger.info(deviceService.selectById("01101").toString());
+        logger.info("耗时：" + (System.currentTimeMillis() - cur));
     }
 }

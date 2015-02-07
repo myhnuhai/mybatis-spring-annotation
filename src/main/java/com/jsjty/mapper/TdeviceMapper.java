@@ -15,12 +15,11 @@ public interface TdeviceMapper {
     int insert(Tdevice tdevice);
 
     @SelectProvider(type = TdeviceProvider.class,method = "selectById")
-    @Options(useCache = true, flushCache = false, timeout = 10000)
     Tdevice selectById(@Param("deviceid")String deviceid);
 
      @SelectProvider(type = TdeviceProvider.class,method = "selectAll")
     List<Tdevice> selectAll();
 
     @UpdateProvider(type = TdeviceProvider.class,method = "update")
-    int updateByPrimaryKey(Tdevice tdevice);
+    int update(Tdevice tdevice);
 }

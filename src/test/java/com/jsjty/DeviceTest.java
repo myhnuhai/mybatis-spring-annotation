@@ -53,13 +53,30 @@ public class DeviceTest {
 
     @Test
     public void btestSelectDevice(){
-        Tdevice tdevice = deviceService.selectByPrimaryKey("100");
+        Tdevice tdevice = deviceService.selectById("100");
         logger.info(tdevice.toString());
     }
 
     @Test
+    public void testUpdate(){
+        Tdevice tdevice = new Tdevice();
+        tdevice.setRemark("123");
+        tdevice.setDevicegrade(8);
+        tdevice.setDeviceid("100");
+        tdevice.setDevicename("测试设备3");
+        tdevice.setDevicetype("弱电");
+        tdevice.setImportance(0);
+        tdevice.setMaintain(2);
+        tdevice.setParentid("");
+        tdevice.setWeight(2.5f);
+        tdevice.setPeriodcount(1);
+        tdevice.setPeriodtype("周");
+        deviceService.update(tdevice);
+    }
+
+    @Test
     public void ctestDeleteDevice(){
-        int temp = deviceService.deleteByPrimaryKey("100");
+        int temp = deviceService.deleteById("100");
         logger.info(String.valueOf(temp));
     }
 }
