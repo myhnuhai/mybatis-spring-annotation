@@ -20,7 +20,7 @@ import java.util.Map;
  */
 @Controller
 @RequestMapping("/excel")
-public class ExcelController {
+public class ExcelController  extends BaseController  {
 
     @Autowired
     private IDeviceService deviceService;

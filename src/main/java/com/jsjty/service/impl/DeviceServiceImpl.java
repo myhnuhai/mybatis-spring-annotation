@@ -19,7 +19,7 @@ public class DeviceServiceImpl implements IDeviceService {
     private TdeviceMapper deviceMapper;
 
     @Override
-
+    @Cacheable(value = "selectByPrimaryKeyCache",key = "#deviceId")
     public Tdevice selectById(String deviceId) {
         return deviceMapper.selectById(deviceId);
     }

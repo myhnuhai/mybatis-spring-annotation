@@ -6,7 +6,7 @@
 	<display-name>MyBatis</display-name>
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:spring-mybatis.xml,classpath:spring-context.xml,classpath:spring-druid.xml,classpath:spring-ehcache.xml</param-value>
+        <param-value>classpath:spring-context.xml</param-value>
     </context-param>
 
     <listener>
